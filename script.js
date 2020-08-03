@@ -7,29 +7,22 @@ $(aboutCont).append(wel)//select the aboutCont variable and append the wel varia
 var welInfo=$("<h5>") //create the heading tag
 $(welInfo).text("A simple Calendar app for scheduling your work day")//target the heading tag and change the text
 $(wel).append(welInfo)//append the variable with the heading and the h5 tag and append it wel
-var blankDiv = $("<div>")
-blankDiv.addClass("headerClass")
-$(welInfo).append(blankDiv)
-var table = $("<table>");//create table tag
-$(blankDiv).append(table)//appending table to 
-var heading = $("<div>")
-$(heading).text("wowzers this is difficult")
-$(table).append(heading)//
-//var date = moment().format('LL');//create date and format it 
- //$(welInfo).append(date)//append the date to the welInfro
- 
- 
- 
- 
- $(heading).addClass("headerClass")
+var date = moment().format('LL');//create date and format it 
+ $(aboutCont).append(date)//append the date to the welInfro
 
- var x = document.createElement("TABLE");
- console.log(table)
- var row = $("<row>");
-        $("row").text("hello")
-        $(table).append(row)
- //$(table).addClass("table")//css class to 
- 
+ var scheudleCont = $("<div>").text("schedule container")
+scheudleCont.addClass("scheduleContainer")
+$("body").append(scheudleCont)
+
+var table = $("<table>")
+table.addClass("table")
+$("scheudleCont").append(table)
+
+var row = $("<tr>")
+row.addClass("table")
+$(table).append(row).text("row tag")
+var row2 = $("<tr>")
+$(table).append(row2).text("row 2 tag")
 
 
  var timeVariables = [8,9,10,11,12,1,2,3,4,5,6,7,8];//created an array to hold the hours of the day
@@ -42,15 +35,15 @@ $(table).append(heading)//
  function createTableStructure(){
     for(i=0; i<timeVariables.length; i++){
         var row = $("<row>");
-        $("row").text("hello")
+       // $("row").text("hello")
         //row =$(listItem).text(timeVariables[i])
-        $(table).append(row)
+       // $(table).append(row)
        
     }
    
 }
 
-console.log(table)
+//console.log(table)
 
 //loop to run through time block array and print its contents
  for(i=0;i<timeVariables.length;i++){
@@ -60,7 +53,7 @@ console.log(table)
    
     $(listItem).addClass("past")
     listItem.attr("time", timeVariables[i]);
-    $(row).append(table)//creates ul tag and appends to container
+   // $(row).append(table)//creates ul tag and appends to container
     console.log(listItem)
 }
 console.log(row)
